@@ -1,17 +1,20 @@
 export type RootStackParamList = {
-  Root: undefined;
-  NotFound: undefined;
+	SetupScreen: undefined;
+	FormScreen: {
+		form: Form[];
+	};
 };
 
-export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
-};
+export enum FormTypeEnum {
+	TEXT,
+	NUMBER,
+	BOOLEAN,
+	CHECKBOX,
+}
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
-};
-
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
-};
+export interface Form {
+	title: string;
+	type: FormTypeEnum;
+	options?: string[];
+	error?: string;
+}
